@@ -30,7 +30,7 @@ https://reactjs.org/docs/faq-internals.html
 
   Your answer: In order to display anything in the browser, we need to use HTML-like openning and closing tags. For example, "<h1>Hello World</h1>"
 
-  Researched answer: The necessary elements we need are script tags and html or JSX tags. 
+  Researched answer: The necessary elements we need are script tags and some html-like JSX tags wrapped around the desired message to be displayed in the browser. 
 
   https://medium.com/the-andela-way/understanding-react-components-37f841c1f3bb
 
@@ -50,7 +50,7 @@ https://reactjs.org/docs/faq-internals.html
 
   Your answer: state is a built-in object for React :) (: 
 
-  Researched answer: the state is where you store the property values that belong to the component. You can manage the properties of the component within the component like you would variables defined in a function.   
+  Researched answer: the state is where you store the property values that belong to the component. You can manage the properties of the component within the component like you would variables in a function.   
 
   https://reactjs.org/docs/faq-state.html
 
@@ -70,9 +70,57 @@ https://reactjs.org/docs/faq-internals.html
 
 Research and define the following terms to the best of your ability.
 
-- React lifecycle methods - 
+- React lifecycle methods - lifecycle methods are the methods that process the lifecycle of a component. Every component has a lifecycle that goes through specific phases. The phases are: 
+
+Mounting : an instance of a componenet is being created and inserted into the DOM
+  - contructor()
+  - getDerivedStateFromProps (static method)
+  - render()
+  - componentDidMount()
+
+Updating : when a componenet is being re-rendered as a result of changes to either its props (properties) or state
+  - getDerivedStateFromProps() (static method)
+  - shouldComponentUpdate
+  - render()
+  - getSnapshotBeforeUpdate()
+  - componentDidUpdate()
+
+Unmounting : when a component is being removed from the DOM 
+  - componentWillUnmount
+
+Error handling : when there is an error during rendering, in a lifecycle method, or in the constructer of any child component
+  - getDerivedStateFromError() (static method)
+  - componentDidCatch()
+
 https://reactjs.org/docs/react-component.html 
-- React props
-- event.preventDefault()
-- DOM events
-- MVC
+https://www.w3schools.com/react/react_lifecycle.asp
+
+
+
+- React props - props stands for properties and is a keyword that pass parent class variables (or properties) into the child component of the class. It's a one way road from parent to child. 
+
+https://itnext.io/what-is-props-and-how-to-use-it-in-react-da307f500da0
+
+
+
+- event.preventDefault() - this method is used for preventing the default behavior of a certain event from happening.
+
+https://reactjs.org/docs/handling-events.html
+
+
+
+- DOM events - are events that belong to event handlers, and allow JavaScript to register different actions on certain DOM elements.
+
+https://www.w3schools.com/jsref/dom_obj_event.asp
+
+
+
+- MVC - stands for model view controller and is a pattern of separating an application into three main components. Each of these components are built to handle specific development aspects of an application. 
+
+  - Model : corresponds to all data-related logic that the user works with. 
+
+  - View : used for all the user intferface logic of the application
+
+  - Controller : acts as an interface between the Model and View components. It  processes all the model information, so it processes all the data-related logic, manipulates the data depending on the model updates, and interacts with the view information to render a final output. 
+
+  https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm

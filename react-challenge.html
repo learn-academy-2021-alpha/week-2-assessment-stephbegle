@@ -35,8 +35,8 @@
 
         handleMoodOptions = () => {
           let randomIndex = Math.floor(Math.random() * this.state.moods.length )
-          this.setState({ currentMood: this.moods[randomIndex] })
-          // moods requires a this.
+          this.setState({ currentMood: this.state.moods[randomIndex] })
+          // moods requires a this.state. on line 38
         }
 
         render(){
@@ -50,13 +50,13 @@
                 { this.state.currentMood }
               </div>
 
-              <button onClick={ handleMoodOptions }>
+              <button onClick={ this.handleMoodOptions }>
                 Click Here For Next Mood option
               </button>
             </>
 
           )
-          // return is supposed to return only one item so <></> are required 
+          // return is supposed to return only one item so <></> encapseling are required 
           // line 53 is missing a this. at handleMoodOptions
         }
       }
