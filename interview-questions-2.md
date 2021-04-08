@@ -32,6 +32,8 @@ https://reactjs.org/docs/faq-internals.html
 
   Researched answer: The necessary elements we need are script tags and some html-like JSX tags wrapped around the desired message to be displayed in the browser. 
 
+  // to add on to this (during review with everyone), it needs a class that extends a React Component that containst a render and a return, and needs a React Fragment that will encase the elements. 
+
   https://medium.com/the-andela-way/understanding-react-components-37f841c1f3bb
 
 
@@ -51,6 +53,8 @@ https://reactjs.org/docs/faq-internals.html
   Your answer: state is a built-in object for React :) (: 
 
   Researched answer: the state is where you store the property values that belong to the component. You can manage the properties of the component within the component like you would variables in a function.   
+
+    // to add on, state holds the state of an object, it holds information for App.js to use at a later time. Its where you store property values that belongs to component. When the state object changes, the component renders.
 
   https://reactjs.org/docs/faq-state.html
 
@@ -99,6 +103,8 @@ https://www.w3schools.com/react/react_lifecycle.asp
 
 - React props - props stands for properties and is a keyword that pass parent class variables (or properties) into the child component of the class. It's a one way road from parent to child. 
 
+// to add on, how dad is passed between different components
+
 https://itnext.io/what-is-props-and-how-to-use-it-in-react-da307f500da0
 
 
@@ -111,16 +117,18 @@ https://reactjs.org/docs/handling-events.html
 
 - DOM events - are events that belong to event handlers, and allow JavaScript to register different actions on certain DOM elements.
 
+// to add one, onClick... the actual click is an event
+
 https://www.w3schools.com/jsref/dom_obj_event.asp
 
 
 
 - MVC - stands for model view controller and is a pattern of separating an application into three main components. Each of these components are built to handle specific development aspects of an application. 
 
-  - Model : corresponds to all data-related logic that the user works with. 
+  - Model : (data) corresponds to all data-related logic that the user works with. 
 
-  - View : used for all the user intferface logic of the application
+  - View : (user interface) used for all the user intferface logic of the application
 
-  - Controller : acts as an interface between the Model and View components. It  processes all the model information, so it processes all the data-related logic, manipulates the data depending on the model updates, and interacts with the view information to render a final output. 
+  - Controller : (processes that handle input) acts as an interface between the Model and View components. It  processes all the model information, so it processes all the data-related logic, manipulates the data depending on the model updates, and interacts with the view information to render a final output. 
 
   https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm

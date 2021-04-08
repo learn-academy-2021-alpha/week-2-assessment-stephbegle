@@ -62,9 +62,15 @@ describe("When isDivByThree is called", () => {
 
 })
 
+// ********** a test case would have been a good idea to add to our test... "a string or boolean is not a number"
+
 // b) Create the function that makes the test pass.
 
 const isDivByThree = (num) => {
+
+    if(num !== "number"){
+        return `${num} is not a number!`
+    }
 
     if(num % 3 === 0){
         // if the number is evenly divisble by three print this
@@ -134,6 +140,14 @@ const capitalize = (array) => {
 }
 console.log(capitalize(randomNouns1))
 console.log(capitalize(randomNouns2))
+
+// this is another way to create this function (Deven's way, on review)
+const capitalize2 = (array) => {
+    const cappedNouns = array.map(value => {
+        return value[0].toUpperCase() + value.substring(1)
+    })
+    return cappedNouns
+}
 
 
 
@@ -205,6 +219,30 @@ const ascNums = (array) => {
     }
 
     return sortArr
+}
+
+// ********** Bellow here, this is was the function I was trying to have work for me initially before i took the  more complicated route above, after seeing the way junior did it, I fucked around with placements and finaly passed the test with this one 
+
+const ascNums = (array) => {
+
+    let numArray = array.filter(value => {
+        return typeof value === "number";
+    })
+
+    return numArray.sort((a, b) =>  (a - b));
+}
+
+// this is another way to create this function (Jr's (Guillermo) way, on review)
+
+const onlyNums = (array) => {
+
+    let findingNums = array.filter(function(value){
+        return typeof value === "number";
+    })
+
+    function sortNumber(a, b) {return a - b}
+
+    return findingNums.sort(sortNumber)
 }
 
 
@@ -279,3 +317,24 @@ const firstVow = (string) => {
 
 //     return search
 // }
+
+// this bellow here, is the way Kevinn solved this one 
+
+const vowelIndex = (string) => {
+
+    return (string.toLowerCase().split("")).findIndex(value => {return "aeiou".includes(value)})
+}
+// .includes() returns a boolean, so .findIndex will find the index where there is the first match for true
+
+// this is how Deven did this one
+
+const vowelIndex2 = (string) => {
+
+    makeStringArr = string.split("");
+
+    let findVowelIndex = makeStringArr.map(value => {
+        return value === "a" || value === "e" || value === "i" || value === "o" || value === "u" ||
+    });
+
+    return findVowelIndex.indexOf(true)
+}
